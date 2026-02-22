@@ -1,0 +1,1592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+@font-face {
+    font-family: "Instrument Serif";
+    src: url("/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Sans - Simplified filename (assuming you rename the file) */
+@font-face {
+    font-family: "Instrument Sans";
+    src: url("/fonts/InstrumentSans-VariableFont_wdth\,wght.ttf") format("truetype-variations");
+    font-weight: 100 900; /* For variable fonts */
+}
+body {
+    background: #111;
+    color: white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 80px;
+    z-index: 1000;
+    position:fixed;
+    background: rgba(0,0,0,0.4);
+}
+.image-box {
+    position: relative;
+    overflow: hidden; 
+    display: inline-block;
+}
+.logo img{
+    width: 200px;
+    min-width: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    font-size: 20px;
+    align-items: center;
+    font-family: "Instrument Sans";
+    font-weight: 100;
+   
+}
+
+.nav-item {
+    position: relative;
+    text-decoration: none;
+    color: white;              /* Default white */
+    font-weight: 500;
+    transition: color 0.3s ease;
+  
+}
+
+/* Assign individual hover colors */
+.nav-item.blue:hover {
+    color: #1E90FF;   /* Blue */
+}
+
+.nav-item.orange:hover {
+    color: #FF8C00;   /* Orange */
+}
+
+/* ================= UNDERLINE ANIMATION ================= */
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: currentColor;   /* Matches text color */
+    transition: width 0.4s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* ================= MOBILE SIDEBAR MODE ================= */
+
+.menubutton {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    
+    cursor: pointer;
+}
+
+/* Sidebar base */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden off screen */
+    height: 100vh;
+    width: 280px;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    flex-direction: column; /* ✅ column layout */
+    align-items: flex-start;
+    padding: 100px 40px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    z-index: 2000;
+}
+
+/* When active */
+.sidebar.active {
+    right: 0;
+}
+
+/* Sidebar links use SAME styling as navbar */
+.sidebar .nav-item {
+    font-size: 22px;
+    font-family: "Instrument Sans";
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= RESPONSIVE BREAKPOINT ================= */
+
+@media (max-width: 1024px) {
+
+    .nav-links {
+        display: none; /* hide top navbar links */
+    }
+
+    .menubutton {
+        display: block; /* show menu icon */
+    }
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: clamp(2.5rem,10vw,3rem);
+    font-family: "Instrument Serif";
+    font-weight: 100;
+    margin: 30px 10px;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    padding: 80px;
+    background: #ddd;
+    color: #000;
+    font-size: clamp(2.5rem,5vw,3.5rem);
+    font-weight: 100;
+     font-family: "Instrument Serif";
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+    padding: 80px;
+    background: #eee;
+    color: black;
+}
+.services h2{
+    font-family: "Instrument Serif";
+    font-size: 60px;
+    font-weight: 100;
+}
+.services p{
+     font-family: "Instrument Sans";
+     font-size: 18px;
+     padding-right: 200px;
+}
+
+.service-cards {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    width: 400px;
+}
+
+/* IMPORTANT PART */
+.card img {
+    width: 100%;
+    height: 600px;       /* Portrait height */
+    object-fit: cover;   /* Crops properly */
+   transition: transform 0.6s ease;
+}
+.image-box:hover img {
+    transform: scale(1.1); /* zoom amount */
+}
+
+.card h3 {
+    
+    font-size: 30px;
+    font-family: "Instrument Sans";
+    font-weight: 100;
+}
+.card p{
+    
+    font-family: "Instrument Sans";
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.card button {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 30px;
+    border: 1px solid black;
+    background: black;     /* Default fully black */
+    color: white;
+    cursor: pointer;
+    font-weight: 100;
+    z-index: 1;
+    font-family: "Instrument Sans";
+    font-size: 20px;
+}
+
+/* Sliding layer */
+.card button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;     /* This is what slides */
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+/* On hover */
+.card button:hover::before {
+    transform: translateY(0%);
+}
+
+.card button:hover {
+    color: black;
+}
+
+
+/* ================= PACKAGES ================= */
+.packages {
+    display: flex;
+    padding: 80px;
+    background: linear-gradient(to right, #111, #000);
+    position: relative;
+    gap: 50px;
+}
+
+.packages-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+.packages-left h2{
+    font-size: 60px;
+    font-family: "Instrument Serif";
+    font-weight: 100;
+}
+.packages-left p{
+    font-family: "Instrument Sans";
+    font-size: 18px;
+    padding-right: 100px;
+}
+.packages-left a{
+    font-family: "Instrument Sans";
+    color: white;
+    font-size: 18px;
+}
+
+.packages-scroll {
+    flex: 1;
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+}
+
+/* Custom Scrollbar */
+.packages-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.packages-scroll::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+   
+    transition: 0.3s;
+}
+
+
+
+.package-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 250px;
+   
+}
+.package-card h3{
+     font-family: "Instrument Sans";
+     font-size: 20px;
+}
+.package-card img{
+    width: 250px;
+    object-fit: cover;
+    height: 400px;
+      transition: transform 0.6s ease;
+      object-position: top;
+}
+.package-card p{
+    font-size: 16px;
+    font-family: "Instrument Sans";
+}
+.package-card a{
+    color: white;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+/* Custom Scrollbar */
+.packages-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.packages-scroll::-webkit-scrollbar-track {
+    background: transparent; /* removes white background */
+}
+
+.packages-scroll::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Normal subtle glow */
+.packages-scroll:hover::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Strong glow while actively scrolling */
+.packages-scroll.scrolling::-webkit-scrollbar-thumb {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+}
+
+/* Glow Line */
+
+/* ================= PROGRESS BAR ================= */
+
+
+
+@media(max-width: 1100px) {
+    .packages {
+        flex-direction: column;
+    }
+
+    .packages-left, .packages-right {
+        width: 100%;
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+/* ================= WHY ================= */
+
+/* ================= WHY SECTION ================= */
+/* ================= WHY SECTION ================= */
+
+.why-section {
+    display: flex;
+    height: 100vh;
+    background: #e6e6e6;
+    overflow: hidden;
+}
+
+/* LEFT SIDE TITLE */
+.why-left {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+}
+
+.why-left h2 {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: black;
+    font-family: "Instrument Serif";
+    font-weight: 100;
+}
+
+/* RIGHT SCROLL AREA */
+.why-scroll-area {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* Horizontal track */
+.why-track {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 120px;
+    padding-left: 150px;
+    transition: transform 0.1s linear;
+}
+
+/* BOX DESIGN EXACT LIKE IMAGE */
+.why-box {
+    width: 500px;
+    min-width: 420px;
+    height: 220px;
+    background: #e6e6e6;
+    border: 1.5px solid black;
+    border-radius: 40px;
+    padding: 30px 40px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.why-box h3 {
+    margin-bottom: 15px;
+   
+    color: black;
+    font-family: "Instrument Serif";
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.why-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+    font-family: "Instrument Sans";
+}
+
+
+/* CONNECTOR LINE */
+.why-box::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.5px;
+    width: 0;
+    background: black;
+}
+
+
+/* ACTIVE LINE GROWTH */
+.why-box.active::after {
+    width: 120px;
+}
+.why-box:last-child::after {
+    display: none;
+}
+
+/* ================= CONTACT ================= */
+
+/* CONTACT SECTION */
+.contact {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+/* VIDEO BACKGROUND */
+.contact-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* DARK OVERLAY */
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* adjust darkness here */
+    z-index: 1;
+}
+
+/* CONTENT WRAPPER */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 120px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+    width: 45%;
+}
+
+.contact-left h2 {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 1.1;
+    margin-bottom: 60px;
+    font-family: "Instrument Serif";
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+form input,
+form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #777;
+    padding: 10px 0;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    font-family: "Instrument Sans";
+}
+
+form textarea {
+    resize: none;
+    height: 80px;
+}
+form label{
+    font-family: "Instrument Sans";
+}
+form input::placeholder,
+form textarea::placeholder {
+    color: #bbb;
+}
+
+/* BUTTON */
+/* BUTTON BASE */
+form button {
+    position: relative;
+    overflow: hidden; /* Keeps the sliding layer inside the button */
+    padding: 12px 30px;
+    border: 1px solid black;
+    background: black; 
+    color: white;
+    cursor: pointer;
+    font-weight: 100;
+    width: fit-content;
+    z-index: 1;
+    font-family: "Instrument Sans";
+    font-size: 20px;
+    transition: color 0.5s ease; /* Smooth text color change */
+}
+
+/* The Sliding layer */
+form button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;    /* Must have width */
+    height: 100%;   /* Must have height */
+    background: white;
+    transform: translateY(100%); /* Start hidden below */
+    transition: transform 0.5s ease;
+    z-index: -1;    /* Sits behind the text */
+    object-fit: cover;
+}
+
+/* HOVER STATES */
+form button:hover::before {
+    transform: translateY(0%); /* Slides up into view */
+}
+
+form button:hover {
+    color: black; /* Text turns black so it's visible on white background */
+}
+
+/* On hover */
+.card button:hover::before {
+    transform: translateY(0%);
+}
+
+.card button:hover {
+    color: black;
+}
+
+/* RIGHT IMAGE */
+.contact-right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-right img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.6s ease;
+}
+
+/* SOCIAL */
+.contact-social {
+    text-align: center;
+    padding: 40px 0 60px;
+    background: black;
+}
+
+.contact-social p {
+    font-size: 20px;
+   margin-bottom: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-family: "Instrument Sans";
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.icons i {
+    
+    
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+
+/* The Animation Blueprint */
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* Slides up 8 pixels */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Applying it to the SVG */
+svg {
+    transition: transform 0.3s ease; /* Smooth return when mouse leaves */
+    cursor: pointer;
+    display: inline-block; /* Essential for transforms to work */
+}
+
+/* Trigger on Hover */
+svg:hover {
+    animation: bounceUp 0.6s ease-in-out;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 900px){
+    .services,
+    .packages,
+    .why,
+    .contact {
+        flex-direction: column;
+    }
+}
+/* ================= LUXURY SCROLL ANIMATION ================= */
+
+/* ============================= */
+/* GLOBAL SLIDE UP ANIMATION */
+/* ============================= */
+
+.slide-up-hidden {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.slide-up-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================= */
+/* WHATSAPP FLOAT BUTTON */
+/* ============================= */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    text-decoration: none;
+
+    animation: heartbeat 1.8s infinite;
+}
+
+/* Hover effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.08); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.12); }
+    100% { transform: scale(1); }
+}
+footer{
+    display: flex;
+    padding: 50px;
+    gap: 50px;
+    width: 100%;
+}
+.footer1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer1 img{
+ width: 300px;
+
+}
+.footer1 p{
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+
+.footer2 .nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    color: white;
+    text-decoration: none;
+}
+.footer2 button{
+    background-color:#111;
+    border: 0;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+.footer3{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+    gap: 15px;
+    
+}
+.footer3 a{
+text-decoration: none;
+    color: white;
+}
+.footer4{
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+.footer4 p{
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+.footer4 .icons {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer4 .icons i {
+    
+    
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.final{
+     color: white;
+     font-size: clamp(1.1rem,2vw,1.3rem);
+      font-family: "Instrument Sans";
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+}
+
+@media(max-width:1024px){
+    footer{
+    display: flex;
+    padding: 50px;
+    gap: 40px;
+    width: 100%;
+}
+.footer1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer1 img{
+ width: 300px;
+
+}
+.footer1 p{
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+
+.footer2 .nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    color: white;
+    text-decoration: none;
+}
+.footer2 button{
+    background-color:#111;
+    border: 0;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+.footer3{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+    gap: 15px;
+    
+}
+.footer3 a{
+text-decoration: none;
+    color: white;
+}
+.footer4{
+display: flex;
+flex-direction: column;
+gap: 15px;
+width: min-content;
+}
+.footer4 p{
+    font-size: 16px;
+    font-family: "Instrument Sans";
+}
+.footer4 .icons {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer4 .icons i {
+    
+    
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+
+
+
+}
+@media(max-width:850px){
+
+     footer{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 40px;
+    width: 100%;
+}
+
+.footer1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.footer1 img{
+ width: 300px;
+
+}
+.footer1 p{
+    text-align: center;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+
+.footer2 .nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    color: white;
+    text-decoration: none;
+}
+.footer2 button{
+    background-color:#111;
+    border: 0;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+}
+.footer3{
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: "Instrument Sans";
+    gap: 15px;
+    align-items: center;
+    
+}
+.footer3 a{
+text-decoration: none;
+    color: white;
+}
+.footer4{
+display: flex;
+flex-direction: column;
+gap: 15px;
+align-items: center;
+width: 100%;
+}
+.footer4 p{
+    font-size: 16px;
+    font-family: "Instrument Sans";
+}
+.footer4 .icons {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer4 .icons i {
+    
+    
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.services {
+    padding: 80px;
+    background: #eee;
+    color: black;
+}
+.services h2{
+    font-family: "Instrument Serif";
+    font-size: 60px;
+    font-weight: 100;
+    text-align: center;
+}
+.services p{
+     font-family: "Instrument Sans";
+     font-size: 18px;
+     padding: 0;
+     text-align: center;
+}
+.services{
+    padding: 60px;
+}
+
+.service-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 20px;
+    width: 400px;
+    min-width: 300px;
+}
+
+/* IMPORTANT PART */
+.card img {
+    width: 100%;
+    height: 600px;      /* Portrait height */
+    object-fit: cover;   /* Crops properly */
+   
+}
+
+.card h3 {
+    
+    font-size: 30px;
+    font-family: "Instrument Sans";
+    font-weight: 100;
+}
+.card p{
+    
+    font-family: "Instrument Sans";
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.card button {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 30px;
+    border: 1px solid black;
+    background: black;     /* Default fully black */
+    color: white;
+    cursor: pointer;
+    font-weight: 100;
+    z-index: 1;
+    font-family: "Instrument Sans";
+    font-size: 20px;
+}
+
+/* Sliding layer */
+.card button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;     /* This is what slides */
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+/* On hover */
+.card button:hover::before {
+    transform: translateY(0%);
+}
+
+.card button:hover {
+    color: black;
+}
+
+.why-left h2 {
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: black;
+    font-family: "Instrument Serif";
+    font-weight: 100;
+}
+
+.why-left {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.why-box {
+    width: 400px;
+    min-width: 300px;
+    height: 220px;
+    background: #e6e6e6;
+    border: 1.5px solid black;
+    border-radius: 40px;
+    padding: 30px 40px;
+    position: relative;
+    flex-shrink: 0;
+}
+.why-section {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background: #e6e6e6;
+    overflow: hidden;
+}
+
+.why-track {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 120px;
+    padding-left: 150px;
+    transition: transform 0.1s linear;
+}
+.why-scroll-area {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+/* VIDEO BACKGROUND */
+.contact-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* DARK OVERLAY */
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* adjust darkness here */
+    z-index: 1;
+}
+
+/* CONTENT WRAPPER */
+.contact-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+    width: 45%;
+}
+
+.contact-left h2 {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 1.1;
+    margin-bottom: 60px;
+    font-family: "Instrument Serif";
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+form input,
+form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #777;
+    padding: 10px 0;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    font-family: "Instrument Sans";
+}
+
+form textarea {
+    resize: none;
+    height: 80px;
+}
+form label{
+    font-family: "Instrument Sans";
+}
+form input::placeholder,
+form textarea::placeholder {
+    color: #bbb;
+}
+
+/* BUTTON */
+/* BUTTON BASE */
+form button {
+    position: relative;
+    overflow: hidden; /* Keeps the sliding layer inside the button */
+    padding: 12px 30px;
+    border: 1px solid black;
+    background: black; 
+    color: white;
+    cursor: pointer;
+    font-weight: 100;
+    width: fit-content;
+    z-index: 1;
+    font-family: "Instrument Sans";
+    font-size: 20px;
+    transition: color 0.5s ease; /* Smooth text color change */
+}
+
+/* The Sliding layer */
+form button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;    /* Must have width */
+    height: 100%;   /* Must have height */
+    background: white;
+    transform: translateY(100%); /* Start hidden below */
+    transition: transform 0.5s ease;
+    z-index: -1;    /* Sits behind the text */
+}
+
+/* HOVER STATES */
+form button:hover::before {
+    transform: translateY(0%); /* Slides up into view */
+}
+
+form button:hover {
+    color: black; /* Text turns black so it's visible on white background */
+}
+
+/* On hover */
+.card button:hover::before {
+    transform: translateY(0%);
+}
+
+.card button:hover {
+    color: black;
+}
+
+/* RIGHT IMAGE */
+.contact-right {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-right img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.packages {
+    display: flex;
+    padding: 30px;
+    background: linear-gradient(to right, #111, #000);
+    position: relative;
+    gap: 50px;
+}
+
+}
+
+@media(max-width:720px){
+    .about {
+    padding: 40px;
+    background: #ddd;
+    color: #000;
+    font-size: clamp(2.3rem,5vw,3.5rem);
+    font-weight: 100;
+     font-family: "Instrument Serif";
+}
+.services{
+    padding: 40px;
+}
+
+.services p{
+     font-family: "Instrument Sans";
+     font-size: 18px;
+     padding: 10px;
+     text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+}
+.contact-left {
+    width: 90%;
+}
+.contact-right {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.contact-right img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.why-section {
+    display: flex;
+    height: 100vh;
+    background: #e6e6e6;
+    overflow: hidden;
+     
+
+}
+}
+
+@media(max-width:540px){
+.services p{
+     font-family: "Instrument Sans";
+     font-size: 18px;
+     padding: 10px;
+     text-align: start;
+}
+
+.navbar {
+   
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    z-index: 1000;
+    background: rgba(0,0,0,0.4);
+}
+
+.services {
+    padding: 40px;
+    background: #eee;
+    color: black;
+}
+.services h2{
+    font-family: "Instrument Serif";
+    font-size: 60px;
+    font-weight: 100;
+    
+}
+
+.service-cards {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 320px;
+}
+.contact-left {
+    width: 90%;
+    padding: 0;
+}
+/* IMPORTANT PART */
+.card img {
+    width: 100%;
+    height: 500px;       /* Portrait height */
+    object-fit: cover;   /* Crops properly */
+   
+}
+.contact-right img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card h3 {
+    
+    font-size: 30px;
+    font-family: "Instrument Sans";
+    font-weight: 100;
+    text-align: center;
+}
+.card p{
+    
+    font-family: "Instrument Sans";
+    font-weight: 100;
+    font-size: 18px;
+    text-align: center;
+    padding: 0;
+}
+
+.card button {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 30px;
+    border: 1px solid black;
+    background: black;     /* Default fully black */
+    color: white;
+    cursor: pointer;
+    font-weight: 100;
+    z-index: 1;
+    font-family: "Instrument Sans";
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Sliding layer */
+.card button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;     /* This is what slides */
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
+}
+
+/* On hover */
+.card button:hover::before {
+    transform: translateY(0%);
+}
+
+.card button:hover {
+    color: black;
+}
+
+.why-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.why-left h2 {
+    width: 100%;
+    font-size: 70px;
+    font-weight: 100;
+    line-height: 1.2;
+    color: black;
+    font-family: "Instrument Serif";
+    text-align: center;
+}
+
+.packages-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    width: 100%;
+}
+
+.packages-left h2{
+    font-size: 60px;
+    font-family: "Instrument Serif";
+    font-weight: 100;
+    text-align: center;
+}
+.packages-left p{
+    font-family: "Instrument Sans";
+    font-size: 18px;
+    padding: 20px,15px;
+    padding-right: 0;
+text-align: left;
+}
+
+.packages {
+    display: flex;
+    padding: 40px;
+    background: linear-gradient(to right, #111, #000);
+    position: relative;
+    gap: 50px;
+}
+.package-card img{
+    width: 250px;
+    object-fit: cover;
+    height: 300px;
+    object-position: top;
+}
+
+}
+ 
+
+
+
+
+
+

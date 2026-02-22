@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sandhill Tours</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+    
+    <div class="logo">
+        <img src="/images/WhatsApp_Image_2026-02-01_at_10.02.47_AM-removebg-preview.png" alt="">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="nav-item blue">Home</a></li>
+        <li><a href="#aboutUs" class="nav-item orange">About Us</a></li>
+        <li><a href="#services" class="nav-item blue">Services</a></li>
+        <li><a href="#packages" class="nav-item orange">Our Packages</a></li>
+        <li><a href="#contactUs" class="nav-item blue">Contact Us</a></li>
+    </ul>
+
+    <!-- Menu Button (inside navbar) -->
+    <button class="menubutton" onclick="openSidebar()">☰</button>
+
+</nav>
+
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()">✖</button>
+
+    <a href="index.html" class="nav-item blue">Home</a>
+    <a href="#aboutUs" class="nav-item orange">About Us</a>
+    <a href="#services" class="nav-item blue">Services</a>
+    <a href="#packages" class="nav-item orange">Our Packages</a>
+    <a href="#contactUs" class="nav-item blue">Contact Us</a>
+</div>
+
+<!-- ================= HERO VIDEO SECTION ================= -->
+
+<section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="/videos/Video_Generation_Based_On_Ideas.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Experience the UAE, Beyond <br>the Ordinary.</h1>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="aboutUs">
+    <p>
+       We are a UAE-based tourism company dedicated to creating unforgettable travel experiences across Dubai and the Emirates. Whether you’re seeking luxury, adventure, culture, or relaxation, our expertly designed packages ensure a smooth, memorable journey from start to finish.With deep local knowledge and a passion for hospitality, we transform trips into stories worth remembering.
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+    <h2>Our Services</h2>
+    <p>At Sandhill Tours, we provide a comprehensive range of travel solutions designed to make your UAE journey seamless and extraordinary. From iconic city tours across Dubai and Abu Dhabi to adrenaline-pumping desert safaris and relaxing dinner cruises, our curated experiences showcase the very best of the Emirates. Beyond sightseeing, we simplify your travel logistics with expert hotel booking assistance and efficient UAE tourist visa processing. Whether you are a first-time visitor or a seasoned traveler, our dedicated team is here to handle every detail, ensuring a stress-free and unforgettable stay in the Land of Wonders.</p>
+
+    <div class="service-cards">
+        <div class="card">
+            <div class="image-box">
+           <img src="/images/Gemini_Generated_Image_klo35gklo35gklo3.png">
+           </div>
+            <h3>UAE Tourist Visa</h3>
+            <p>For more Information</p>
+            <a href="#contactUs"><button>Contact Us</button></a>
+        </div>
+
+        <div class="card">
+             <div class="image-box">
+            <img src="/images/pexels-irshad-ahmad-501841091-33669490.jpg">
+            </div>
+            <h3>One Day Trip</h3>
+            <p>For more Information</p>
+            <a href="#contactUs"><button>Contact Us</button></a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PACKAGES ================= -->
+
+<section class="packages" id="packages">
+    <div class="packages-left">
+        <h2>Our Package Tours</h2>
+        <p>Experience the best of Dubai and beyond with our comprehensive tour packages, where every detail is handled with precision. We’ve simplified travel by combining the UAE's must-see attractions into seamless, unforgettable itineraries that transition effortlessly from the vibrant energy of the city to the tranquil beauty of our desert landscapes. Our offerings are thoughtfully tailored to every type of traveler, providing a curated gateway to the luxury, history, and wonder that make the Emirates a world-class destination.</p>
+        <p>For more Information</p>
+        <a href="#contactUs">Contact Us</a>
+    </div>
+
+    <div class="packages-scroll">
+        <div class="package-card">
+            <div class="image-box">
+            <img src="/images/pexels-irshad-ahmad-501841091-33438757.jpg">
+            </div>
+            <h3>Dubai City Tour</h3>
+            <p>Discover the dazzling "City of Gold" where futuristic skylines meet rich heritage. From the towering heights of the Burj Khalifa to the aromatic alleyways of the Spice Souk, our guided tours capture the essence of Dubai’s rapid transformation. We take you on a seamless journey through iconic landmarks, offering expert insights and unparalleled photo opportunities. Let us show you the vibrant pulse of this global metropolis in style and comfort.</p>
+             <p>For more Information</p>
+        <a href="#contactUs">Contact Us</a>
+        </div>
+
+        <div class="package-card">
+            <div class="image-box">
+            <img src="/images/pexels-maoriginalphotography-320044.jpg">
+            </div>
+            <h3>Abu Dhabi Tour</h3>
+            <p>Step into the capital’s world of cultural grandeur and architectural marvels. Our Abu Dhabi tour invites you to find serenity at the breathtaking Sheikh Zayed Grand Mosque and explore the artistic treasures of the Louvre Abu Dhabi. Witness the perfect harmony of traditional Emirati soul and modern luxury along the scenic Corniche. It is a sophisticated day of discovery tailored for those who appreciate the finer details of history and design.</p>
+             <p>For more Information</p>
+        <a href="#contactUs">Contact Us</a>
+        </div>
+
+        <div class="package-card">
+             <div class="image-box">
+            <img src="/images/pexels-othmane-ettalbi-2148497459-30218467.jpg">
+            </div>
+            <h3>Desert Safari</h3>
+            <p>Escape the city lights for an adrenaline-pumping journey into the heart of the golden dunes. Feel the thrill of a 4x4 dune bashing session before unwinding at our authentic Bedouin-inspired camp under the stars. Enjoy a traditional buffet dinner, mesmerizing live performances, and the timeless charm of camel trekking as the sun sets. It is more than just a tour; it is a soulful encounter with the vast, mystical Arabian wilderness.</p>
+             <p>For more Information</p>
+        <a href="#contactUs">Contact Us</a>
+        </div>
+
+          <div class="package-card">
+             <div class="image-box">
+                <img src="/images/pexels-ermal-photography-77758716-12369779.jpg">
+             </div>
+            
+            <h3>Dhow Cruise</h3>
+            <p>Glide through the shimmering waters of the Marina or Creek aboard a traditionally decorated wooden Dhow. As the city skyline illuminates the night, you will enjoy a five-star international buffet paired with enchanting music and live entertainment. This elegant voyage offers a unique perspective of the UAE's architecture from the peaceful vantage point of the sea. It is the ultimate romantic escape or family evening, blending nostalgic charm with modern luxury.</p>
+             <p>For more Information</p>
+        <a href="#contactUs">Contact Us</a>
+        </div>
+          <div class="package-card">
+            <div class="image-box">
+            <img src="/images/pexels-apasaric-2041556.jpg">
+            </div>
+            <h3>Hotel Booking</h3>
+            <p>Your comfort is our priority, which is why we offer exclusive access to the UAE’s most prestigious accommodations. Whether you desire a beachfront resort on the Palm Jumeirah or a sleek boutique hotel in the heart of the city, we secure the best rates and premium perks. Our local expertise ensures your stay is perfectly positioned for both relaxation and exploration. Trust us to handle the details so you can wake up to the finest views in the Emirates.</p>
+             <p>For more Information</p>
+        <a href="#contactUs">Contact Us</a>
+        </div>
+    </div>
+
+    
+</section>
+ 
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why-section" >
+
+    <div class="why-left">
+        <h2>Why<br>Choose Us</h2>
+    </div>
+
+    <div class="why-scroll-area">
+        <div class="why-track">
+
+            <div class="why-box">
+                <h3>Curated Local Expertise</h3>
+                <p>
+                    Explore the UAE through the eyes of experts. Our guides offer deep cultural insights and exclusive access to the Emirates’ most iconic landmarks and hidden gems.
+                </p>
+            </div>
+
+            <div class="why-box">
+                <h3>Premium Comfort</h3>
+                <p>
+                    Luxury transport, seamless planning, and personalized itineraries ensure every journey is smooth and refined.
+                </p>
+            </div>
+
+            <div class="why-box">
+                <h3>All Emirates Coverage</h3>
+                <p>
+                    From Dubai to Fujairah, we take you across all seven Emirates with complete travel experiences.
+                </p>
+            </div>
+
+          <div class="why-box">
+                <h3>Licensed Tour Guides</h3>
+                <p>
+                    Professional, certified guides providing safe, informative, and memorable tours.
+                </p>
+            </div>
+
+            <div class="why-box">
+                <h3>24/7 Support</h3>
+                <p>
+                    Dedicated assistance before, during, and after your tour for total peace of mind.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contactUs">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline class="contact-video">
+        <source src="/videos/Untitled design (2).mp4" type="video/mp4">
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="video-overlay"></div>
+
+    <!-- Content Wrapper -->
+    <div class="contact-content">
+
+        <div class="contact-left">
+            <h2>Contact<br>Us</h2>
+
+            <form id="contact-form">
+                <input type="text" name="first_name" placeholder="Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="email" name="user_email" placeholder="Email">
+                <textarea  name="message" placeholder="Your Message (required)"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="contact-right">
+            <div class="image-box">
+            <img src="/images/pexels-pixabay-37848.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="contact-social">
+    <p>OR CONTACT US THROUGH</p>
+    <div class="icons">
+        <i class="fab fa-instagram">
+            <a href="https://www.instagram.com/sandhilltours" target="_blank" class="social-link">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
+</a>
+</i>
+        <i class="fab fa-facebook-f">
+            <a href="https://www.facebook.com/people/Sandhill-Tours/61586484130276/" target="_blank" class="social-link">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+</a>
+</i>
+        <i class="fab fa-whatsapp">
+            <a href="https://wa.me/917907802008" target="_blank" class="social-link">
+                 <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+             </a></i>
+
+
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bookings@sandhilltours.com" target="_blank">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+  </svg>
+</a>
+    </div>
+
+   
+</div>
+
+<a href="https://wa.me/917907802008" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+
+     <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+
+</a>
+
+<footer>
+    <div class="footer1">
+      <div class="logo">
+        <img src="WhatsApp_Image_2026-02-01_at_10.02.47_AM-removebg-preview.png" alt="">
+    </div>
+     <p>Experience the UAE, Beyond <br>the Ordinary.</p>
+    </div>
+
+    <div class="footer2">
+     <ul class="nav-links">
+    <li><button><a href="index.html" class="nav-item blue">Home</a></button></li>
+    <li><button><a href="#aboutUs" class="nav-item orange">About Us</a></button></li>
+    <li><button><a href="#services" class="nav-item blue">Services</a></button></li>
+    <li><button><a href="#packages" class="nav-item orange">Our Packages</a></button></li>
+    <li><button><a href="#contactUs" class="nav-item blue">Contact Us</a></button></li>
+</ul>
+    </div>
+
+    <div class="footer3">
+    <h4>Our Services</h4>
+    <a href="#services">UAE Tourist Visa</a>
+    <a href="#services">Dubai City Tour</a>
+    <a href="#services">Abu Dhabi Tour</a>
+    <a href="#services">Desert Safari</a>
+    <a href="#services">Hotel Booking</a>
+    </div>
+
+    <div class="footer4">
+        <p> CONTACT US</p>
+    
+   <p>+91 79078 02008</p>
+   <p>bookings@sandhilltours.com</p>
+
+    <div class="icons">
+        <i class="fab fa-instagram">
+            <a href="https://www.instagram.com/sandhilltours" target="_blank" class="social-link">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+</svg>
+</a>
+</i>
+        <i class="fab fa-facebook-f">
+            <a href="https://www.facebook.com/people/Sandhill-Tours/61586484130276/" target="_blank" class="social-link">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg>
+</a>
+</i>
+        <i class="fab fa-whatsapp">
+            <a href="https://wa.me/917907802008" target="_blank" class="social-link">
+                 <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+             </a></i>
+
+
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bookings@sandhilltours.com" target="_blank">
+  <svg width="30" height="3c0" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+  </svg>
+</a>
+    </div>
+    </div>
+   
+
+    
+</footer>
+<p class="final"> © 2026 SandhillTours. All rights reserved.</p>
+
+
+<script src="index.js"></script>
+
+</body>
+</html>
