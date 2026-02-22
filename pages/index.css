@@ -1612,7 +1612,7 @@ text-align: left;
     background: white;
     padding: clamp(20px, 4vw, 40px);
     border-radius: 16px;
-    width: min(100%, 500px);
+    width: min(90%, 500px);
     text-align: center;
     transform: scale(0.85);
     opacity: 0;
