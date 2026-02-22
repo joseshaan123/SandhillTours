@@ -122,35 +122,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// ================= EMAILJS =================
-// Initialize EmailJS with your public key (from dashboard)
-emailjs.init("Co2dPvmB3WpFoB3KY"); // Replace with your own EmailJS public key
 
-// Wait for DOM to load
+
+
+
+
+
+
+
+
+(function() {
+    emailjs.init("Co2dPvmB3WpFoB3KY");
+})();
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Get the contact form
     const form = document.getElementById("contact-form");
+    const overlay = document.getElementById("popupOverlay");
+    const popupBox = document.getElementById("popupBox");
+    const popupMessage = document.getElementById("popupMessage");
+    const popupOkBtn = document.getElementById("popupOkBtn");
 
-    // Listen for submit
-    form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent default form submission
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        // Send the form data to EmailJS
-        emailjs.sendForm(
-            "service_jmcy9em",    // Replace with your service ID
-            "template_ynj46pr",   // Replace with your template ID
-            form
-        )
-        .then(function () {
-            alert("Message sent successfully!");
-            form.reset(); // Clear the form after sending
+        emailjs.sendForm("service_jmcy9em", "template_ynj46pr", form)
+        .then(function(response) {
+            console.log("SUCCESS", response);
+            showPopup(" Your message has been sent successfully!", "success");
+            form.reset();
         })
-        .catch(function (error) {
-            console.error("EmailJS error:", error);
-            alert("Failed to send message. Please try again.");
+        .catch(function(error) {
+            console.error("ERROR DETAILS:", error);
+            showPopup(" Failed to send message. Please try again.", "error");
         });
+    });
 
+    function showPopup(message, type) {
+        popupMessage.textContent = message;
+        popupBox.classList.remove("success", "error");
+        popupBox.classList.add(type);
+        overlay.classList.add("active");
+    }
+
+    popupOkBtn.addEventListener("click", function() {
+        overlay.classList.remove("active");
     });
 
 });
