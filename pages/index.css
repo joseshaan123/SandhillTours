@@ -1586,7 +1586,84 @@ text-align: left;
  
 
 
+/* ===== POPUP OVERLAY ===== */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+}
+
+/* Active state */
+.popup-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ===== POPUP BOX ===== */
+.popup-box {
+    background: white;
+    padding: clamp(20px, 4vw, 40px);
+    border-radius: 16px;
+    width: min(100%, 500px);
+    text-align: center;
+    transform: scale(0.85);
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    border: 0;
+    height: 200px;
+}
+
+/* Active animation */
+.popup-overlay.active .popup-box {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===== MESSAGE TEXT ===== */
+.popup-box p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-family: "Instrument Sans";
+    color: black;
+}
+
+/* ===== OK BUTTON ===== */
+.popup-box button {
+    padding: 12px 30px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background: black;
+    font-family: "Instrument Sans";
+    color: white;
+    transition: transform 0.3s ease, background 0.3s ease;
+    
+}
+
+.popup-box button:hover {
+    transform: scale(1.05);
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+}
 
 
+/* ===== SUCCESS / ERROR STATES ===== */
+.popup-box.success {
+    border:3px solid #27e074;
+}
 
-
+.popup-box.error {
+    border: 3px solid #e74c3c;
+}
