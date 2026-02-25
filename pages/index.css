@@ -809,6 +809,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
 }
 .footer1 img{
  width: 300px;
